@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7D922F0E-4435-4ACB-AE55-972B9A1D4EB8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EBay.OAS3v1IV.Models</RootNamespace>
+    <AssemblyName>EBay.OAS3v1IV.Models</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.1.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\AcceptPaymentDisputeRequest.cs" />
+    <Compile Include="Models\AddEvidencePaymentDisputeRequest.cs" />
+    <Compile Include="Models\AddEvidencePaymentDisputeResponse.cs" />
+    <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\Amount.cs" />
+    <Compile Include="Models\AppliedPromotion.cs" />
+    <Compile Include="Models\Buyer.cs" />
+    <Compile Include="Models\CancelRequest.cs" />
+    <Compile Include="Models\CancelStatus.cs" />
+    <Compile Include="Models\ContestPaymentDisputeRequest.cs" />
+    <Compile Include="Models\DeliveryCost.cs" />
+    <Compile Include="Models\DisputeAmount.cs" />
+    <Compile Include="Models\DisputeEvidence.cs" />
+    <Compile Include="Models\DisputeSummaryResponse.cs" />
+    <Compile Include="Models\EbayCollectAndRemitTax.cs" />
+    <Compile Include="Models\EbayCollectedCharges.cs" />
+    <Compile Include="Models\EbayFulfillmentProgram.cs" />
+    <Compile Include="Models\EbayInternationalShipping.cs" />
+    <Compile Include="Models\EbayShipping.cs" />
+    <Compile Include="Models\EbayTaxReference.cs" />
+    <Compile Include="Models\EbayVaultProgram.cs" />
+    <Compile Include="Models\Error.cs" />
+    <Compile Include="Models\ErrorParameter.cs" />
+    <Compile Include="Models\EvidenceRequest.cs" />
+    <Compile Include="Models\ExtendedContact.cs" />
+    <Compile Include="Models\FileEvidence.cs" />
+    <Compile Include="Models\FileInfo.cs" />
+    <Compile Include="Models\FulfillmentStartInstruction.cs" />
+    <Compile Include="Models\GiftDetails.cs" />
+    <Compile Include="Models\InfoFromBuyer.cs" />
+    <Compile Include="Models\IssueRefundRequest.cs" />
+    <Compile Include="Models\ItemLocation.cs" />
+    <Compile Include="Models\LegacyReference.cs" />
+    <Compile Include="Models\LineItem.cs" />
+    <Compile Include="Models\LineItemFulfillmentInstructions.cs" />
+    <Compile Include="Models\LineItemProperties.cs" />
+    <Compile Include="Models\LineItemReference.cs" />
+    <Compile Include="Models\LineItemRefund.cs" />
+    <Compile Include="Models\LinkedOrderLineItem.cs" />
+    <Compile Include="Models\MonetaryTransaction.cs" />
+    <Compile Include="Models\NameValuePair.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderLineItems.cs" />
+    <Compile Include="Models\OrderRefund.cs" />
+    <Compile Include="Models\OrderSearchPagedCollection.cs" />
+    <Compile Include="Models\Payment.cs" />
+    <Compile Include="Models\PaymentDispute.cs" />
+    <Compile Include="Models\PaymentDisputeActivity.cs" />
+    <Compile Include="Models\PaymentDisputeActivityHistory.cs" />
+    <Compile Include="Models\PaymentDisputeOutcomeDetail.cs" />
+    <Compile Include="Models\PaymentDisputeSummary.cs" />
+    <Compile Include="Models\PaymentHold.cs" />
+    <Compile Include="Models\PaymentSummary.cs" />
+    <Compile Include="Models\Phone.cs" />
+    <Compile Include="Models\PhoneNumber.cs" />
+    <Compile Include="Models\PickupStep.cs" />
+    <Compile Include="Models\PostSaleAuthenticationProgram.cs" />
+    <Compile Include="Models\PricingSummary.cs" />
+    <Compile Include="Models\Program.cs" />
+    <Compile Include="Models\Refund.cs" />
+    <Compile Include="Models\RefundItem.cs" />
+    <Compile Include="Models\ReturnAddress.cs" />
+    <Compile Include="Models\SellerActionsToRelease.cs" />
+    <Compile Include="Models\ShippingFulfillment.cs" />
+    <Compile Include="Models\ShippingFulfillmentDetails.cs" />
+    <Compile Include="Models\ShippingFulfillmentPagedCollection.cs" />
+    <Compile Include="Models\ShippingStep.cs" />
+    <Compile Include="Models\SimpleAmount.cs" />
+    <Compile Include="Models\Tax.cs" />
+    <Compile Include="Models\TaxAddress.cs" />
+    <Compile Include="Models\TaxIdentifier.cs" />
+    <Compile Include="Models\TrackingInfo.cs" />
+    <Compile Include="Models\UpdateEvidencePaymentDisputeRequest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EBay.OAS3v1IV\EBay.OAS3v1IV.Client.csproj">
+      <Project>{89de4bc9-10ab-47bb-b1db-f6a51f9a87cc}</Project>
+      <Name>EBay.OAS3v1IV.Client</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
