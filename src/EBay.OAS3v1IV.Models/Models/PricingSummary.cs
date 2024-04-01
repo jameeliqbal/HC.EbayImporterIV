@@ -19,8 +19,8 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = EBay.OAS3v1IV.Client.SwaggerDateConverter;
-namespace EBay.OAS3v1IV.Models
+//using SwaggerDateConverter = EBay.OAS3v1IV.Client.SwaggerDateConverter;
+namespace eBay.OAS3v1IV.Models
 {
     /// <summary>
     /// This type contains a summary of cumulative costs and charges for all line items of an order, including item price, price adjustments, sales taxes, delivery costs, and order discounts.

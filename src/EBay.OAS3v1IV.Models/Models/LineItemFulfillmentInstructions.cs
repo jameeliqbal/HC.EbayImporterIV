@@ -19,8 +19,8 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = EBay.OAS3v1IV.Client.SwaggerDateConverter;
-namespace EBay.OAS3v1IV.Models
+//using SwaggerDateConverter = EBay.OAS3v1IV.Client.SwaggerDateConverter;
+namespace eBay.OAS3v1IV.Models
 {
     /// <summary>
     /// This type contains the specifications for processing the fulfillment of a line item, including the handling window and the delivery window. These fields provide guidance for &lt;i&gt;eBay Guaranteed Delivery&lt;/i&gt; as well as for non-guaranteed delivery.

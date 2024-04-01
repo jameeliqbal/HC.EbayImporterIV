@@ -115,6 +115,7 @@ Partial Class Form1
         Me.txtOrdersToSkip.Name = "txtOrdersToSkip"
         Me.txtOrdersToSkip.Size = New System.Drawing.Size(84, 20)
         Me.txtOrdersToSkip.TabIndex = 7
+        Me.txtOrdersToSkip.Text = "0"
         '
         'txtOrdersPerPage
         '
@@ -122,6 +123,7 @@ Partial Class Form1
         Me.txtOrdersPerPage.Name = "txtOrdersPerPage"
         Me.txtOrdersPerPage.Size = New System.Drawing.Size(84, 20)
         Me.txtOrdersPerPage.TabIndex = 7
+        Me.txtOrdersPerPage.Text = "10"
         '
         'cmbOrderFulfillmentStatus
         '

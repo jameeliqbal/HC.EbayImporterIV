@@ -2,13 +2,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EBay.OAS3v1IV.Client", "src\EBay.OAS3v1IV\EBay.OAS3v1IV.Client.csproj", "{89DE4BC9-10AB-47BB-B1DB-F6A51F9A87CC}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EBay.OAS3v1IV.SellApi", "src\EBay.OAS3v1IV.Api\EBay.OAS3v1IV.SellApi.csproj", "{225DA403-4346-4829-B336-DE64F5365C6E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EBay.OAS3v1IV.Models", "src\EBay.OAS3v1IV.Models\EBay.OAS3v1IV.Models.csproj", "{7D922F0E-4435-4ACB-AE55-972B9A1D4EB8}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "HC.EBayImporter.Demo", "src\HC.EBayImporter.Demo\HC.EBayImporter.Demo.vbproj", "{CB6E2AC9-A06A-4975-9ED8-C9F8E6761C4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EBay.OAS3v1IV.Client", "src\EBay.OAS3v1IV\EBay.OAS3v1IV.Client.csproj", "{89DE4BC9-10AB-47BB-B1DB-F6A51F9A87CC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ebay-oauth-csharp-client", "src\ebay-oauth-csharp-client\ebay-oauth-csharp-client.csproj", "{B8419C1C-F814-4307-90A5-5690E55F47D0}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "HC.EBayImporter.Core", "HC.EBayImporter.Core\HC.EBayImporter.Core.vbproj", "{205815A4-54AD-439E-A5AE-55D6A9BC2F99}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "HC.EBayModule", "HC.EBayConnector\HC.EBayModule.vbproj", "{DAB54820-E360-4FB6-AB2E-58432D9091FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,10 +22,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{89DE4BC9-10AB-47BB-B1DB-F6A51F9A87CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{89DE4BC9-10AB-47BB-B1DB-F6A51F9A87CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{89DE4BC9-10AB-47BB-B1DB-F6A51F9A87CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{89DE4BC9-10AB-47BB-B1DB-F6A51F9A87CC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{225DA403-4346-4829-B336-DE64F5365C6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{225DA403-4346-4829-B336-DE64F5365C6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{225DA403-4346-4829-B336-DE64F5365C6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -32,6 +34,22 @@ Global
 		{CB6E2AC9-A06A-4975-9ED8-C9F8E6761C4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB6E2AC9-A06A-4975-9ED8-C9F8E6761C4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CB6E2AC9-A06A-4975-9ED8-C9F8E6761C4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89DE4BC9-10AB-47BB-B1DB-F6A51F9A87CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89DE4BC9-10AB-47BB-B1DB-F6A51F9A87CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89DE4BC9-10AB-47BB-B1DB-F6A51F9A87CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89DE4BC9-10AB-47BB-B1DB-F6A51F9A87CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8419C1C-F814-4307-90A5-5690E55F47D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8419C1C-F814-4307-90A5-5690E55F47D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8419C1C-F814-4307-90A5-5690E55F47D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8419C1C-F814-4307-90A5-5690E55F47D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{205815A4-54AD-439E-A5AE-55D6A9BC2F99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{205815A4-54AD-439E-A5AE-55D6A9BC2F99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{205815A4-54AD-439E-A5AE-55D6A9BC2F99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{205815A4-54AD-439E-A5AE-55D6A9BC2F99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAB54820-E360-4FB6-AB2E-58432D9091FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAB54820-E360-4FB6-AB2E-58432D9091FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAB54820-E360-4FB6-AB2E-58432D9091FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAB54820-E360-4FB6-AB2E-58432D9091FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

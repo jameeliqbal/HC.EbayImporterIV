@@ -126,12 +126,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EBay.OAS3v1IV\EBay.OAS3v1IV.Client.csproj">
-      <Project>{89de4bc9-10ab-47bb-b1db-f6a51f9a87cc}</Project>
-      <Name>EBay.OAS3v1IV.Client</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

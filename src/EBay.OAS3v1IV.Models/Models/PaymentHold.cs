@@ -19,8 +19,8 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = EBay.OAS3v1IV.Client.SwaggerDateConverter;
-namespace EBay.OAS3v1IV.Models
+//using SwaggerDateConverter = EBay.OAS3v1IV.Client.SwaggerDateConverter;
+namespace eBay.OAS3v1IV.Models
 {
     /// <summary>
     /// This type contains information about a hold placed on a payment to a seller for an order, including the reason why the buyer&#x27;s payment for the order is being held, the expected release date of the funds into the seller&#x27;s account, the current state of the hold, and the actual release date if the payment has been released, and possible actions the seller can take to expedite the payout of funds into their account.

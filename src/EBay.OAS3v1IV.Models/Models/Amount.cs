@@ -19,8 +19,8 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = EBay.OAS3v1IV.Client.SwaggerDateConverter;
-namespace EBay.OAS3v1IV.Models
+//using SwaggerDateConverter = EBay.OAS3v1IV.Client.SwaggerDateConverter;
+namespace eBay.OAS3v1IV.Models
 {
     /// <summary>
     /// This type defines the monetary value of an amount. It can provide the amount in both the currency used on the eBay site where an item is being offered and the conversion of that value into another currency, if applicable.

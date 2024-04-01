@@ -19,8 +19,8 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = EBay.OAS3v1IV.Client.SwaggerDateConverter;
-namespace EBay.OAS3v1IV.Models
+//using SwaggerDateConverter = EBay.OAS3v1IV.Client.SwaggerDateConverter;
+namespace eBay.OAS3v1IV.Models
 {
     /// <summary>
     /// This type is used by the base response of the &lt;strong&gt;getActivities&lt;/strong&gt; method, and includes a log of all activities of a payment dispute, from creation to resolution.

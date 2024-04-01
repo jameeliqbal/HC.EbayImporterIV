@@ -11,7 +11,7 @@
 using System;
 using RestSharp;
 
-namespace EBay.OAS3v1IV.Client
+namespace eBay.OAS3v1IV.Client
 {
     /// <summary>
     /// A delegate to ExceptionFactory method

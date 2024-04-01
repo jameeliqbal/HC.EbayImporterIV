@@ -14,7 +14,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using RestSharp;
 
-namespace EBay.OAS3v1IV.Client
+namespace eBay.OAS3v1IV.Client
 {
     /// <summary>
     /// Represents configuration aspects required to interact with the API endpoints.

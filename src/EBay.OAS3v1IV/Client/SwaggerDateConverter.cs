@@ -9,7 +9,7 @@
  */
 using Newtonsoft.Json.Converters;
 
-namespace EBay.OAS3v1IV.Client
+namespace eBay.OAS3v1IV.Client
 {
     /// <summary>
     /// Formatter for 'date' swagger formats ss defined by full-date - RFC3339

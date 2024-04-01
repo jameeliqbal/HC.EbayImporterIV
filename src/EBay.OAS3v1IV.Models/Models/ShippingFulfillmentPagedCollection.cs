@@ -19,8 +19,8 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = EBay.OAS3v1IV.Client.SwaggerDateConverter;
-namespace EBay.OAS3v1IV.Models
+//using SwaggerDateConverter = EBay.OAS3v1IV.Client.SwaggerDateConverter;
+namespace eBay.OAS3v1IV.Models
 {
     /// <summary>
     /// This type contains the specifications for the entire collection of shipping fulfillments that are associated with the order specified by a &lt;b&gt;getShippingFulfillments&lt;/b&gt; call. The &lt;b&gt;fulfillments&lt;/b&gt; container returns an array of all the fulfillments in the collection.

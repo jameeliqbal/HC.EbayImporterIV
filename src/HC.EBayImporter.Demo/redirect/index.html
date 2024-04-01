@@ -1,0 +1,23 @@
+﻿<html>
+<head>
+    <title>Authorizing HC Application</title>
+</head>
+<body onload="redirect()">
+    <h1>Authorizing Application</h1>
+    <code>DO NOT CLOSE THE WINDOW</code>
+    <h4>
+        Please wait....
+    </h4>
+
+    <script type="text/javascript">
+        function redirect() {
+            // Append fragment as query string so that server can receive it.
+
+
+            //document.location.href = "token?url_with_fragment=" + encodeURIComponent(document.location.href);
+            //document.location.href = document.location.host + ":" + document.location.port +"/redirect/token.html"+ document.location.search ;
+            document.location.href = "token.html" + document.location.search;
+        }
+    </script>
+</body>
+</html>

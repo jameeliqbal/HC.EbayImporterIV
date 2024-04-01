@@ -1,6 +1,7 @@
-﻿Imports EBay.OAS3v1IV.SellApi.FulfillmentApis
-Imports EBay.OAS3v1IV.Client
-Imports EBay.OAS3v1IV.Models
+﻿Imports eBay.OAS3v1IV.SellApi.FulfillmentApis
+Imports eBay.OAS3v1IV.Client
+Imports eBay.OAS3v1IV.Models
+Imports HC.EBayImporter.Core
 
 Public Class Form1
     Private Const EBayBaseAPIPathSandbox As String = "https://api.sandbox.ebay.com/sell/fulfillment/v1" '" 
@@ -11,46 +12,62 @@ Public Class Form1
     Private Const hollandToken_test As String = "AgAAAA**AQAAAA**aAAAAA**F+GRUA**nY+sHZ2PrBmdj6wVnY+sEZ2PrA2dj6wFk4GhCZWEowSdj6x9nY+seQ**gfsBAA**AAMAAA**aP51UK7BOTSDSLoXvZEYnybpP6Kodeh7j7jOL9KRWCYBs7uLJhIVmB0ALvII+/adXNZ+ZXhQe69+XSUjmWxfL5AtBS5q/D3fVyoc2/RY0UPSCUE6KhHW6oASBp9+M656p4YCQeERlTlZ/xH6VrCwaeHa/MNN92ueffbi6eWGyrMVgVsJ7R/lSljAjFEI8xGcJGQPG3Z/+k/MbWm33gyFL/Rf9s5z1P3JQeERBVD1EkOGLEEs0JA8W2lznzXml9/4dvcfG0ue0/rUSefzVpClnNiQAm0h/Pcs2Kn7T0Uy80pALvfmTRT9q/k50bmtyXFYzqej7k4CVzd/pEFOILw0qNeULTzBuLjGezs9HdYPbP5rH8jbIhfwSZfLfwq3STo6pLXbjBwCw45becVzuovCYT3LhzFM78aEXa4c5XZ5Zrw4pbeSYWrl2fiQpfHWw1tZ5uZBbRCFSJ9mQJcg6CuushCVq6ZZbL69YpZG+4dDHiUpRkl3MP80xZSN59oMj9sXlWmQNvTFXbIvGAzHGYVa0gCw4AzBT7H+id0/siOjPTq3OhM+NP1tGehqr2KMheq6NSB4jricbREhZWkR8/sRXlsqRLTrdcBV5fHG7k0QqJuBaeiLI1zYVx/l1ObLNLHT59eefuTXu3DOQAaRlHx19AwY+G7KitUzZvIdRy9fRGWi6LZpby6bnMYqvBbjZhtnV4tP89GJc59OHQIZ7k2TlfaK5EJQPpZkAG6iCbkBVhuOrBGZq7po3xCV/8C1PNzv"
 
 
+
     Public Property Config As Configuration
+    Public Property EbayImporter As EBayImporterClient
+
     Private Sub btnSearchOrders_Click(sender As Object, e As EventArgs) Handles btnSearchOrders.Click
 
         'Dim config = New Configuration With {
-        '    .AccessToken = jameelToken2,
-        '    .BasePath = EBayBaseAPIPathSandbox
+        '    .AccessToken = EbayImporter.AccessToken,
+        '    .BasePath = EbayImporter.BasePath
         '}
+        'Dim config As Configuration
         Try
             Cursor.Current = Cursors.WaitCursor
-            txtLog.Clear()
+            'txtLog.Clear()
 
             WriteLog("Searching orders...")
-            WriteLog("Congiguration:")
-            WriteLog("\t Base Path:" & Config.BasePath)
-            WriteLog("\t Access Token:" & Config.AccessToken)
+            'WriteLog("Congiguration:")
+            'WriteLog(vbTab + "Base Path:" & config.BasePath)
+            'WriteLog(vbTab + "Access Token:" & config.AccessToken)
 
-            Dim ordersApi = New OrderApi(Config)
+
+            'If EbayOptions.IsAccessTokenExpired Then
+            '    OAuth2Api.GetAccessToken(OAuthEnvironment environment, String refreshToken, IList < String > scopes)
+            'End If
+            'Dim ordersApi = New OrderApi(config)
 
             'Configuration.Default.AccessToken = hollandToken
             'Configuration.Default.BasePath = EBayBaseAPIPathSandbox
 
-            'Dim ordersApi = New OrderApi()
+            'Dim ordersApi = New OrderApi(Config)
 
             Dim ofs = cmbOrderFulfillmentStatus.Text
 
             Dim filter As String = "orderfulfillmentstatus:" & ofs.Replace("{", "%7B").Replace("|", "%7C").Replace("}", "%7D")
-            Dim limit As Integer = 10
-            Dim offset As Integer = 0
+            Dim limit As Integer = Integer.Parse(txtOrdersPerPage.Text.Trim())
+            Dim offset As Integer = Integer.Parse(txtOrdersToSkip.Text.Trim())
 
 
             ' Get orders
             'Dim result As OrderSearchPagedCollection = ordersApi.GetOrders(Nothing, filter, limit, offset)
             WriteLog("Fetching Orders...")
-            Dim result As OrderSearchPagedCollection = ordersApi.GetOrders()
-            WriteLog("\t Orders Fetched!")
-            WriteLog("Listing Orders:")
-            For Each order As Order In result.Orders
-                Console.WriteLine($"Order ID: {order.OrderId}, Status: {order.OrderFulfillmentStatus}")
-                WriteLog($"\t Order ID: {order.OrderId}, Status: {order.OrderFulfillmentStatus}")
+
+            'Dim result As OrderSearchPagedCollection = ordersApi.GetOrders()
+
+            'WriteLog("\t Orders Fetched!")
+            'WriteLog("Listing Orders:")
+            'For Each order As Models.Order In result.Orders
+            '    Console.WriteLine($"Order ID: {order.OrderId}, Status: {order.OrderFulfillmentStatus}")
+            '    WriteLog($"\t Order ID: {order.OrderId}, Status: {order.OrderFulfillmentStatus}")
+            'Next
+
+            Dim orders = EbayImporter.GetOrders(Nothing, filter, limit, offset)
+            For Each order In orders
+                WriteLog($"{vbTab} Order ID: {order.OrderId}, Status: {order.OrderStatus}")
             Next
+
             Cursor.Current = Cursors.Default
         Catch ex As Exception
             Cursor.Current = Cursors.Default
@@ -67,5 +84,10 @@ Public Class Form1
         txtLog.AppendText(message)
 
     End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        cmbOrderFulfillmentStatus.SelectedIndex = 0
+    End Sub
+
 
 End Class

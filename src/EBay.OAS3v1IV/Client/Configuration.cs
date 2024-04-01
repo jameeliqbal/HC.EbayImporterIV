@@ -15,7 +15,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace EBay.OAS3v1IV.Client
+namespace eBay.OAS3v1IV.Client
 {
     /// <summary>
     /// Represents a set of configuration settings

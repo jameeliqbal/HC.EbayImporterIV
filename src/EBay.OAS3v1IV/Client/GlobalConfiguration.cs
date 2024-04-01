@@ -16,7 +16,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 
-namespace EBay.OAS3v1IV.Client
+namespace eBay.OAS3v1IV.Client
 {
     /// <summary>
     /// <see cref="GlobalConfiguration"/> provides a compile-time extension point for globally configuring

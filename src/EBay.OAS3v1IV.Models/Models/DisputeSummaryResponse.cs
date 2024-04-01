@@ -19,8 +19,8 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = EBay.OAS3v1IV.Client.SwaggerDateConverter;
-namespace EBay.OAS3v1IV.Models
+//using SwaggerDateConverter = EBay.OAS3v1IV.Client.SwaggerDateConverter;
+namespace eBay.OAS3v1IV.Models
 {
     /// <summary>
     /// This type defines the base response payload of the &lt;strong&gt;getPaymentDisputeSummaries&lt;/strong&gt; method. Each payment dispute that matches the input criteria is returned under the &lt;strong&gt;paymentDisputeSummaries&lt;/strong&gt; array.

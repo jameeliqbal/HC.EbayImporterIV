@@ -20,7 +20,7 @@ using System.Text;
 using Newtonsoft.Json;
 using RestSharp;
 
-namespace EBay.OAS3v1IV.Client
+namespace eBay.OAS3v1IV.Client
 {
     /// <summary>
     /// API client is mainly responsible for making the HTTP call to the API backend.
@@ -51,7 +51,7 @@ namespace EBay.OAS3v1IV.Client
         /// </summary>
         public ApiClient()
         {
-            Configuration = EBay.OAS3v1IV.Client.Configuration.Default;
+            Configuration = eBay.OAS3v1IV.Client.Configuration.Default;
             RestClient = new RestClient("https://api.ebay.com{basePath}");
         }
 
@@ -62,7 +62,7 @@ namespace EBay.OAS3v1IV.Client
         /// <param name="config">An instance of Configuration.</param>
         public ApiClient(Configuration config)
         {
-            Configuration = config ?? EBay.OAS3v1IV.Client.Configuration.Default;
+            Configuration = config ?? eBay.OAS3v1IV.Client.Configuration.Default;
 
             RestClient = new RestClient(Configuration.BasePath);
         }
@@ -133,7 +133,7 @@ namespace EBay.OAS3v1IV.Client
             // add file parameter, if any
             foreach(var param in fileParams)
             {
-                request.AddFile(param.Value.Name, param.Value.Writer, param.Value.FileName, param.Value.ContentType);
+                //request.AddFile(param.Value.Name, param.Value.Writer, param.Value.FileName, param.Value.ContentType);
             }
 
             if (postBody != null) // http body (model or byte[]) parameter

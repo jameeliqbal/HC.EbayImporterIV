@@ -12,10 +12,10 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using RestSharp;
-using EBay.OAS3v1IV.Client;
-using EBay.OAS3v1IV.Models;
+using eBay.OAS3v1IV.Client;
+using eBay.OAS3v1IV.Models;
 
-namespace EBay.OAS3v1IV.SellApi.FulfillmentApis
+namespace eBay.OAS3v1IV.SellApi.FulfillmentApis
 {
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -29,7 +29,7 @@ namespace EBay.OAS3v1IV.SellApi.FulfillmentApis
         /// <remarks>
         /// When you group an order&#x27;s line items into one or more packages, each package requires a corresponding plan for handling, addressing, and shipping; this is a &lt;i&gt;shipping fulfillment&lt;/i&gt;. For each package, execute this call once to generate a shipping fulfillment associated with that package. &lt;br&gt;&lt;br&gt; &lt;span class&#x3D;\&quot;tablenote\&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; A single line item in an order can consist of multiple units of a purchased item, and one unit can consist of multiple parts or components. Although these components might be provided by the manufacturer in separate packaging, the seller must include all components of a given line item in the same package.&lt;/span&gt; &lt;br&gt;&lt;br&gt;Before using this call for a given package, you must determine which line items are in the package. If the package has been shipped, you should provide the date of shipment in the request. If not provided, it will default to the current date and time.
         /// </remarks>
-        /// <exception cref="EBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="eBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">fulfillment payload</param>
         /// <param name="contentType">This header indicates the format of the request body provided by the client. Its value should be set to &lt;b&gt;application/json&lt;/b&gt;. &lt;br&gt;&lt;br&gt; For more information, refer to &lt;a href&#x3D;\&quot;/api-docs/static/rest-request-components.html#HTTP\&quot; target&#x3D;\&quot;_blank \&quot;&gt;HTTP request headers&lt;/a&gt;.</param>
         /// <param name="orderId">This path parameter is used to specify the unique identifier of the order associated with the shipping fulfillment being created.&lt;br&gt;&lt;br&gt; Use the &lt;a href&#x3D;\&quot;/api-docs/sell/fulfillment/resources/order/methods/getOrders\&quot; target&#x3D;\&quot;_blank \&quot;&gt;getOrders&lt;/a&gt; method to retrieve order IDs.</param>
@@ -42,7 +42,7 @@ namespace EBay.OAS3v1IV.SellApi.FulfillmentApis
         /// <remarks>
         /// When you group an order&#x27;s line items into one or more packages, each package requires a corresponding plan for handling, addressing, and shipping; this is a &lt;i&gt;shipping fulfillment&lt;/i&gt;. For each package, execute this call once to generate a shipping fulfillment associated with that package. &lt;br&gt;&lt;br&gt; &lt;span class&#x3D;\&quot;tablenote\&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; A single line item in an order can consist of multiple units of a purchased item, and one unit can consist of multiple parts or components. Although these components might be provided by the manufacturer in separate packaging, the seller must include all components of a given line item in the same package.&lt;/span&gt; &lt;br&gt;&lt;br&gt;Before using this call for a given package, you must determine which line items are in the package. If the package has been shipped, you should provide the date of shipment in the request. If not provided, it will default to the current date and time.
         /// </remarks>
-        /// <exception cref="EBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="eBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">fulfillment payload</param>
         /// <param name="contentType">This header indicates the format of the request body provided by the client. Its value should be set to &lt;b&gt;application/json&lt;/b&gt;. &lt;br&gt;&lt;br&gt; For more information, refer to &lt;a href&#x3D;\&quot;/api-docs/static/rest-request-components.html#HTTP\&quot; target&#x3D;\&quot;_blank \&quot;&gt;HTTP request headers&lt;/a&gt;.</param>
         /// <param name="orderId">This path parameter is used to specify the unique identifier of the order associated with the shipping fulfillment being created.&lt;br&gt;&lt;br&gt; Use the &lt;a href&#x3D;\&quot;/api-docs/sell/fulfillment/resources/order/methods/getOrders\&quot; target&#x3D;\&quot;_blank \&quot;&gt;getOrders&lt;/a&gt; method to retrieve order IDs.</param>
@@ -54,7 +54,7 @@ namespace EBay.OAS3v1IV.SellApi.FulfillmentApis
         /// <remarks>
         /// Use this call to retrieve the contents of a fulfillment based on its unique identifier, &lt;b&gt;fulfillmentId&lt;/b&gt; (combined with the associated order&#x27;s &lt;b&gt;orderId&lt;/b&gt;). The &lt;b&gt;fulfillmentId&lt;/b&gt; value was originally generated by the &lt;b&gt;createShippingFulfillment&lt;/b&gt; call, and is returned by the &lt;b&gt;getShippingFulfillments&lt;/b&gt; call in the &lt;b&gt;members.fulfillmentId&lt;/b&gt; field.
         /// </remarks>
-        /// <exception cref="EBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="eBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fulfillmentId">This path parameter is used to specify the unique identifier of the shipping fulfillment being retrieved.&lt;br&gt;&lt;br&gt;Use the &lt;a href&#x3D;\&quot;/api-docs/sell/fulfillment/resources/order/shipping_fulfillment/methods/getShippingFulfillments\&quot; target&#x3D;\&quot;_blank \&quot;&gt;getShippingFulfillments&lt;/a&gt; method to retrieved fulfillment IDs.</param>
         /// <param name="orderId">This path parameter is used to specify the unique identifier of the order associated with the shipping fulfillment being retrieved.&lt;br&gt;&lt;br&gt; Use the &lt;a href&#x3D;\&quot;/api-docs/sell/fulfillment/resources/order/methods/getOrders\&quot; target&#x3D;\&quot;_blank \&quot;&gt;getOrders&lt;/a&gt; method to retrieve order IDs. Order ID values are also shown in My eBay/Seller Hub.</param>
         /// <returns>ShippingFulfillment</returns>
@@ -66,7 +66,7 @@ namespace EBay.OAS3v1IV.SellApi.FulfillmentApis
         /// <remarks>
         /// Use this call to retrieve the contents of a fulfillment based on its unique identifier, &lt;b&gt;fulfillmentId&lt;/b&gt; (combined with the associated order&#x27;s &lt;b&gt;orderId&lt;/b&gt;). The &lt;b&gt;fulfillmentId&lt;/b&gt; value was originally generated by the &lt;b&gt;createShippingFulfillment&lt;/b&gt; call, and is returned by the &lt;b&gt;getShippingFulfillments&lt;/b&gt; call in the &lt;b&gt;members.fulfillmentId&lt;/b&gt; field.
         /// </remarks>
-        /// <exception cref="EBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="eBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fulfillmentId">This path parameter is used to specify the unique identifier of the shipping fulfillment being retrieved.&lt;br&gt;&lt;br&gt;Use the &lt;a href&#x3D;\&quot;/api-docs/sell/fulfillment/resources/order/shipping_fulfillment/methods/getShippingFulfillments\&quot; target&#x3D;\&quot;_blank \&quot;&gt;getShippingFulfillments&lt;/a&gt; method to retrieved fulfillment IDs.</param>
         /// <param name="orderId">This path parameter is used to specify the unique identifier of the order associated with the shipping fulfillment being retrieved.&lt;br&gt;&lt;br&gt; Use the &lt;a href&#x3D;\&quot;/api-docs/sell/fulfillment/resources/order/methods/getOrders\&quot; target&#x3D;\&quot;_blank \&quot;&gt;getOrders&lt;/a&gt; method to retrieve order IDs. Order ID values are also shown in My eBay/Seller Hub.</param>
         /// <returns>ApiResponse of ShippingFulfillment</returns>
@@ -77,7 +77,7 @@ namespace EBay.OAS3v1IV.SellApi.FulfillmentApis
         /// <remarks>
         /// Use this call to retrieve the contents of all fulfillments currently defined for a specified order based on the order&#x27;s unique identifier, &lt;b&gt;orderId&lt;/b&gt;. This value is returned in the &lt;b&gt;getOrders&lt;/b&gt; call&#x27;s &lt;b&gt;members.orderId&lt;/b&gt; field when you search for orders by creation date or shipment status.
         /// </remarks>
-        /// <exception cref="EBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="eBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">This path parameter is used to specify the unique identifier of the order associated with the shipping fulfillments being retrieved.&lt;br&gt;&lt;br&gt;Use the &lt;a href&#x3D;\&quot;/api-docs/sell/fulfillment/resources/order/methods/getOrders\&quot; target&#x3D;\&quot;_blank \&quot;&gt;getOrders&lt;/a&gt; method to retrieve order IDs. Order ID values are also shown in My eBay/Seller Hub.</param>
         /// <returns>ShippingFulfillmentPagedCollection</returns>
         ShippingFulfillmentPagedCollection GetShippingFulfillments (string orderId);
@@ -88,7 +88,7 @@ namespace EBay.OAS3v1IV.SellApi.FulfillmentApis
         /// <remarks>
         /// Use this call to retrieve the contents of all fulfillments currently defined for a specified order based on the order&#x27;s unique identifier, &lt;b&gt;orderId&lt;/b&gt;. This value is returned in the &lt;b&gt;getOrders&lt;/b&gt; call&#x27;s &lt;b&gt;members.orderId&lt;/b&gt; field when you search for orders by creation date or shipment status.
         /// </remarks>
-        /// <exception cref="EBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="eBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">This path parameter is used to specify the unique identifier of the order associated with the shipping fulfillments being retrieved.&lt;br&gt;&lt;br&gt;Use the &lt;a href&#x3D;\&quot;/api-docs/sell/fulfillment/resources/order/methods/getOrders\&quot; target&#x3D;\&quot;_blank \&quot;&gt;getOrders&lt;/a&gt; method to retrieve order IDs. Order ID values are also shown in My eBay/Seller Hub.</param>
         /// <returns>ApiResponse of ShippingFulfillmentPagedCollection</returns>
         ApiResponse<ShippingFulfillmentPagedCollection> GetShippingFulfillmentsWithHttpInfo (string orderId);
@@ -100,7 +100,7 @@ namespace EBay.OAS3v1IV.SellApi.FulfillmentApis
         /// <remarks>
         /// When you group an order&#x27;s line items into one or more packages, each package requires a corresponding plan for handling, addressing, and shipping; this is a &lt;i&gt;shipping fulfillment&lt;/i&gt;. For each package, execute this call once to generate a shipping fulfillment associated with that package. &lt;br&gt;&lt;br&gt; &lt;span class&#x3D;\&quot;tablenote\&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; A single line item in an order can consist of multiple units of a purchased item, and one unit can consist of multiple parts or components. Although these components might be provided by the manufacturer in separate packaging, the seller must include all components of a given line item in the same package.&lt;/span&gt; &lt;br&gt;&lt;br&gt;Before using this call for a given package, you must determine which line items are in the package. If the package has been shipped, you should provide the date of shipment in the request. If not provided, it will default to the current date and time.
         /// </remarks>
-        /// <exception cref="EBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="eBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">fulfillment payload</param>
         /// <param name="contentType">This header indicates the format of the request body provided by the client. Its value should be set to &lt;b&gt;application/json&lt;/b&gt;. &lt;br&gt;&lt;br&gt; For more information, refer to &lt;a href&#x3D;\&quot;/api-docs/static/rest-request-components.html#HTTP\&quot; target&#x3D;\&quot;_blank \&quot;&gt;HTTP request headers&lt;/a&gt;.</param>
         /// <param name="orderId">This path parameter is used to specify the unique identifier of the order associated with the shipping fulfillment being created.&lt;br&gt;&lt;br&gt; Use the &lt;a href&#x3D;\&quot;/api-docs/sell/fulfillment/resources/order/methods/getOrders\&quot; target&#x3D;\&quot;_blank \&quot;&gt;getOrders&lt;/a&gt; method to retrieve order IDs.</param>
@@ -113,7 +113,7 @@ namespace EBay.OAS3v1IV.SellApi.FulfillmentApis
         /// <remarks>
         /// When you group an order&#x27;s line items into one or more packages, each package requires a corresponding plan for handling, addressing, and shipping; this is a &lt;i&gt;shipping fulfillment&lt;/i&gt;. For each package, execute this call once to generate a shipping fulfillment associated with that package. &lt;br&gt;&lt;br&gt; &lt;span class&#x3D;\&quot;tablenote\&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; A single line item in an order can consist of multiple units of a purchased item, and one unit can consist of multiple parts or components. Although these components might be provided by the manufacturer in separate packaging, the seller must include all components of a given line item in the same package.&lt;/span&gt; &lt;br&gt;&lt;br&gt;Before using this call for a given package, you must determine which line items are in the package. If the package has been shipped, you should provide the date of shipment in the request. If not provided, it will default to the current date and time.
         /// </remarks>
-        /// <exception cref="EBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="eBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">fulfillment payload</param>
         /// <param name="contentType">This header indicates the format of the request body provided by the client. Its value should be set to &lt;b&gt;application/json&lt;/b&gt;. &lt;br&gt;&lt;br&gt; For more information, refer to &lt;a href&#x3D;\&quot;/api-docs/static/rest-request-components.html#HTTP\&quot; target&#x3D;\&quot;_blank \&quot;&gt;HTTP request headers&lt;/a&gt;.</param>
         /// <param name="orderId">This path parameter is used to specify the unique identifier of the order associated with the shipping fulfillment being created.&lt;br&gt;&lt;br&gt; Use the &lt;a href&#x3D;\&quot;/api-docs/sell/fulfillment/resources/order/methods/getOrders\&quot; target&#x3D;\&quot;_blank \&quot;&gt;getOrders&lt;/a&gt; method to retrieve order IDs.</param>
@@ -125,7 +125,7 @@ namespace EBay.OAS3v1IV.SellApi.FulfillmentApis
         /// <remarks>
         /// Use this call to retrieve the contents of a fulfillment based on its unique identifier, &lt;b&gt;fulfillmentId&lt;/b&gt; (combined with the associated order&#x27;s &lt;b&gt;orderId&lt;/b&gt;). The &lt;b&gt;fulfillmentId&lt;/b&gt; value was originally generated by the &lt;b&gt;createShippingFulfillment&lt;/b&gt; call, and is returned by the &lt;b&gt;getShippingFulfillments&lt;/b&gt; call in the &lt;b&gt;members.fulfillmentId&lt;/b&gt; field.
         /// </remarks>
-        /// <exception cref="EBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="eBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fulfillmentId">This path parameter is used to specify the unique identifier of the shipping fulfillment being retrieved.&lt;br&gt;&lt;br&gt;Use the &lt;a href&#x3D;\&quot;/api-docs/sell/fulfillment/resources/order/shipping_fulfillment/methods/getShippingFulfillments\&quot; target&#x3D;\&quot;_blank \&quot;&gt;getShippingFulfillments&lt;/a&gt; method to retrieved fulfillment IDs.</param>
         /// <param name="orderId">This path parameter is used to specify the unique identifier of the order associated with the shipping fulfillment being retrieved.&lt;br&gt;&lt;br&gt; Use the &lt;a href&#x3D;\&quot;/api-docs/sell/fulfillment/resources/order/methods/getOrders\&quot; target&#x3D;\&quot;_blank \&quot;&gt;getOrders&lt;/a&gt; method to retrieve order IDs. Order ID values are also shown in My eBay/Seller Hub.</param>
         /// <returns>Task of ShippingFulfillment</returns>
@@ -137,7 +137,7 @@ namespace EBay.OAS3v1IV.SellApi.FulfillmentApis
         /// <remarks>
         /// Use this call to retrieve the contents of a fulfillment based on its unique identifier, &lt;b&gt;fulfillmentId&lt;/b&gt; (combined with the associated order&#x27;s &lt;b&gt;orderId&lt;/b&gt;). The &lt;b&gt;fulfillmentId&lt;/b&gt; value was originally generated by the &lt;b&gt;createShippingFulfillment&lt;/b&gt; call, and is returned by the &lt;b&gt;getShippingFulfillments&lt;/b&gt; call in the &lt;b&gt;members.fulfillmentId&lt;/b&gt; field.
         /// </remarks>
-        /// <exception cref="EBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="eBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fulfillmentId">This path parameter is used to specify the unique identifier of the shipping fulfillment being retrieved.&lt;br&gt;&lt;br&gt;Use the &lt;a href&#x3D;\&quot;/api-docs/sell/fulfillment/resources/order/shipping_fulfillment/methods/getShippingFulfillments\&quot; target&#x3D;\&quot;_blank \&quot;&gt;getShippingFulfillments&lt;/a&gt; method to retrieved fulfillment IDs.</param>
         /// <param name="orderId">This path parameter is used to specify the unique identifier of the order associated with the shipping fulfillment being retrieved.&lt;br&gt;&lt;br&gt; Use the &lt;a href&#x3D;\&quot;/api-docs/sell/fulfillment/resources/order/methods/getOrders\&quot; target&#x3D;\&quot;_blank \&quot;&gt;getOrders&lt;/a&gt; method to retrieve order IDs. Order ID values are also shown in My eBay/Seller Hub.</param>
         /// <returns>Task of ApiResponse (ShippingFulfillment)</returns>
@@ -148,7 +148,7 @@ namespace EBay.OAS3v1IV.SellApi.FulfillmentApis
         /// <remarks>
         /// Use this call to retrieve the contents of all fulfillments currently defined for a specified order based on the order&#x27;s unique identifier, &lt;b&gt;orderId&lt;/b&gt;. This value is returned in the &lt;b&gt;getOrders&lt;/b&gt; call&#x27;s &lt;b&gt;members.orderId&lt;/b&gt; field when you search for orders by creation date or shipment status.
         /// </remarks>
-        /// <exception cref="EBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="eBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">This path parameter is used to specify the unique identifier of the order associated with the shipping fulfillments being retrieved.&lt;br&gt;&lt;br&gt;Use the &lt;a href&#x3D;\&quot;/api-docs/sell/fulfillment/resources/order/methods/getOrders\&quot; target&#x3D;\&quot;_blank \&quot;&gt;getOrders&lt;/a&gt; method to retrieve order IDs. Order ID values are also shown in My eBay/Seller Hub.</param>
         /// <returns>Task of ShippingFulfillmentPagedCollection</returns>
         System.Threading.Tasks.Task<ShippingFulfillmentPagedCollection> GetShippingFulfillmentsAsync (string orderId);
@@ -159,7 +159,7 @@ namespace EBay.OAS3v1IV.SellApi.FulfillmentApis
         /// <remarks>
         /// Use this call to retrieve the contents of all fulfillments currently defined for a specified order based on the order&#x27;s unique identifier, &lt;b&gt;orderId&lt;/b&gt;. This value is returned in the &lt;b&gt;getOrders&lt;/b&gt; call&#x27;s &lt;b&gt;members.orderId&lt;/b&gt; field when you search for orders by creation date or shipment status.
         /// </remarks>
-        /// <exception cref="EBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="eBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">This path parameter is used to specify the unique identifier of the order associated with the shipping fulfillments being retrieved.&lt;br&gt;&lt;br&gt;Use the &lt;a href&#x3D;\&quot;/api-docs/sell/fulfillment/resources/order/methods/getOrders\&quot; target&#x3D;\&quot;_blank \&quot;&gt;getOrders&lt;/a&gt; method to retrieve order IDs. Order ID values are also shown in My eBay/Seller Hub.</param>
         /// <returns>Task of ApiResponse (ShippingFulfillmentPagedCollection)</returns>
         System.Threading.Tasks.Task<ApiResponse<ShippingFulfillmentPagedCollection>> GetShippingFulfillmentsAsyncWithHttpInfo (string orderId);
@@ -171,7 +171,7 @@ namespace EBay.OAS3v1IV.SellApi.FulfillmentApis
     /// </summary>
         public partial class ShippingFulfillmentApi : IShippingFulfillmentApi
     {
-        private EBay.OAS3v1IV.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private eBay.OAS3v1IV.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ShippingFulfillmentApi"/> class.
@@ -179,9 +179,9 @@ namespace EBay.OAS3v1IV.SellApi.FulfillmentApis
         /// <returns></returns>
         public ShippingFulfillmentApi(String basePath)
         {
-            this.Configuration = new EBay.OAS3v1IV.Client.Configuration { BasePath = basePath };
+            this.Configuration = new eBay.OAS3v1IV.Client.Configuration { BasePath = basePath };
 
-            ExceptionFactory = EBay.OAS3v1IV.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = eBay.OAS3v1IV.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -190,9 +190,9 @@ namespace EBay.OAS3v1IV.SellApi.FulfillmentApis
         /// <returns></returns>
         public ShippingFulfillmentApi()
         {
-            this.Configuration = EBay.OAS3v1IV.Client.Configuration.Default;
+            this.Configuration = eBay.OAS3v1IV.Client.Configuration.Default;
 
-            ExceptionFactory = EBay.OAS3v1IV.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = eBay.OAS3v1IV.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -201,14 +201,14 @@ namespace EBay.OAS3v1IV.SellApi.FulfillmentApis
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public ShippingFulfillmentApi(EBay.OAS3v1IV.Client.Configuration configuration = null)
+        public ShippingFulfillmentApi(eBay.OAS3v1IV.Client.Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
-                this.Configuration = EBay.OAS3v1IV.Client.Configuration.Default;
+                this.Configuration = eBay.OAS3v1IV.Client.Configuration.Default;
             else
                 this.Configuration = configuration;
 
-            ExceptionFactory = EBay.OAS3v1IV.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = eBay.OAS3v1IV.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -234,12 +234,12 @@ namespace EBay.OAS3v1IV.SellApi.FulfillmentApis
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public EBay.OAS3v1IV.Client.Configuration Configuration {get; set;}
+        public eBay.OAS3v1IV.Client.Configuration Configuration {get; set;}
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public EBay.OAS3v1IV.Client.ExceptionFactory ExceptionFactory
+        public eBay.OAS3v1IV.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -277,7 +277,7 @@ namespace EBay.OAS3v1IV.SellApi.FulfillmentApis
         /// <summary>
         ///  When you group an order&#x27;s line items into one or more packages, each package requires a corresponding plan for handling, addressing, and shipping; this is a &lt;i&gt;shipping fulfillment&lt;/i&gt;. For each package, execute this call once to generate a shipping fulfillment associated with that package. &lt;br&gt;&lt;br&gt; &lt;span class&#x3D;\&quot;tablenote\&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; A single line item in an order can consist of multiple units of a purchased item, and one unit can consist of multiple parts or components. Although these components might be provided by the manufacturer in separate packaging, the seller must include all components of a given line item in the same package.&lt;/span&gt; &lt;br&gt;&lt;br&gt;Before using this call for a given package, you must determine which line items are in the package. If the package has been shipped, you should provide the date of shipment in the request. If not provided, it will default to the current date and time.
         /// </summary>
-        /// <exception cref="EBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="eBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">fulfillment payload</param>
         /// <param name="contentType">This header indicates the format of the request body provided by the client. Its value should be set to &lt;b&gt;application/json&lt;/b&gt;. &lt;br&gt;&lt;br&gt; For more information, refer to &lt;a href&#x3D;\&quot;/api-docs/static/rest-request-components.html#HTTP\&quot; target&#x3D;\&quot;_blank \&quot;&gt;HTTP request headers&lt;/a&gt;.</param>
         /// <param name="orderId">This path parameter is used to specify the unique identifier of the order associated with the shipping fulfillment being created.&lt;br&gt;&lt;br&gt; Use the &lt;a href&#x3D;\&quot;/api-docs/sell/fulfillment/resources/order/methods/getOrders\&quot; target&#x3D;\&quot;_blank \&quot;&gt;getOrders&lt;/a&gt; method to retrieve order IDs.</param>
@@ -291,7 +291,7 @@ namespace EBay.OAS3v1IV.SellApi.FulfillmentApis
         /// <summary>
         ///  When you group an order&#x27;s line items into one or more packages, each package requires a corresponding plan for handling, addressing, and shipping; this is a &lt;i&gt;shipping fulfillment&lt;/i&gt;. For each package, execute this call once to generate a shipping fulfillment associated with that package. &lt;br&gt;&lt;br&gt; &lt;span class&#x3D;\&quot;tablenote\&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; A single line item in an order can consist of multiple units of a purchased item, and one unit can consist of multiple parts or components. Although these components might be provided by the manufacturer in separate packaging, the seller must include all components of a given line item in the same package.&lt;/span&gt; &lt;br&gt;&lt;br&gt;Before using this call for a given package, you must determine which line items are in the package. If the package has been shipped, you should provide the date of shipment in the request. If not provided, it will default to the current date and time.
         /// </summary>
-        /// <exception cref="EBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="eBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">fulfillment payload</param>
         /// <param name="contentType">This header indicates the format of the request body provided by the client. Its value should be set to &lt;b&gt;application/json&lt;/b&gt;. &lt;br&gt;&lt;br&gt; For more information, refer to &lt;a href&#x3D;\&quot;/api-docs/static/rest-request-components.html#HTTP\&quot; target&#x3D;\&quot;_blank \&quot;&gt;HTTP request headers&lt;/a&gt;.</param>
         /// <param name="orderId">This path parameter is used to specify the unique identifier of the order associated with the shipping fulfillment being created.&lt;br&gt;&lt;br&gt; Use the &lt;a href&#x3D;\&quot;/api-docs/sell/fulfillment/resources/order/methods/getOrders\&quot; target&#x3D;\&quot;_blank \&quot;&gt;getOrders&lt;/a&gt; method to retrieve order IDs.</param>
@@ -368,7 +368,7 @@ namespace EBay.OAS3v1IV.SellApi.FulfillmentApis
         /// <summary>
         ///  When you group an order&#x27;s line items into one or more packages, each package requires a corresponding plan for handling, addressing, and shipping; this is a &lt;i&gt;shipping fulfillment&lt;/i&gt;. For each package, execute this call once to generate a shipping fulfillment associated with that package. &lt;br&gt;&lt;br&gt; &lt;span class&#x3D;\&quot;tablenote\&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; A single line item in an order can consist of multiple units of a purchased item, and one unit can consist of multiple parts or components. Although these components might be provided by the manufacturer in separate packaging, the seller must include all components of a given line item in the same package.&lt;/span&gt; &lt;br&gt;&lt;br&gt;Before using this call for a given package, you must determine which line items are in the package. If the package has been shipped, you should provide the date of shipment in the request. If not provided, it will default to the current date and time.
         /// </summary>
-        /// <exception cref="EBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="eBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">fulfillment payload</param>
         /// <param name="contentType">This header indicates the format of the request body provided by the client. Its value should be set to &lt;b&gt;application/json&lt;/b&gt;. &lt;br&gt;&lt;br&gt; For more information, refer to &lt;a href&#x3D;\&quot;/api-docs/static/rest-request-components.html#HTTP\&quot; target&#x3D;\&quot;_blank \&quot;&gt;HTTP request headers&lt;/a&gt;.</param>
         /// <param name="orderId">This path parameter is used to specify the unique identifier of the order associated with the shipping fulfillment being created.&lt;br&gt;&lt;br&gt; Use the &lt;a href&#x3D;\&quot;/api-docs/sell/fulfillment/resources/order/methods/getOrders\&quot; target&#x3D;\&quot;_blank \&quot;&gt;getOrders&lt;/a&gt; method to retrieve order IDs.</param>
@@ -383,7 +383,7 @@ namespace EBay.OAS3v1IV.SellApi.FulfillmentApis
         /// <summary>
         ///  When you group an order&#x27;s line items into one or more packages, each package requires a corresponding plan for handling, addressing, and shipping; this is a &lt;i&gt;shipping fulfillment&lt;/i&gt;. For each package, execute this call once to generate a shipping fulfillment associated with that package. &lt;br&gt;&lt;br&gt; &lt;span class&#x3D;\&quot;tablenote\&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; A single line item in an order can consist of multiple units of a purchased item, and one unit can consist of multiple parts or components. Although these components might be provided by the manufacturer in separate packaging, the seller must include all components of a given line item in the same package.&lt;/span&gt; &lt;br&gt;&lt;br&gt;Before using this call for a given package, you must determine which line items are in the package. If the package has been shipped, you should provide the date of shipment in the request. If not provided, it will default to the current date and time.
         /// </summary>
-        /// <exception cref="EBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="eBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">fulfillment payload</param>
         /// <param name="contentType">This header indicates the format of the request body provided by the client. Its value should be set to &lt;b&gt;application/json&lt;/b&gt;. &lt;br&gt;&lt;br&gt; For more information, refer to &lt;a href&#x3D;\&quot;/api-docs/static/rest-request-components.html#HTTP\&quot; target&#x3D;\&quot;_blank \&quot;&gt;HTTP request headers&lt;/a&gt;.</param>
         /// <param name="orderId">This path parameter is used to specify the unique identifier of the order associated with the shipping fulfillment being created.&lt;br&gt;&lt;br&gt; Use the &lt;a href&#x3D;\&quot;/api-docs/sell/fulfillment/resources/order/methods/getOrders\&quot; target&#x3D;\&quot;_blank \&quot;&gt;getOrders&lt;/a&gt; method to retrieve order IDs.</param>
@@ -460,7 +460,7 @@ namespace EBay.OAS3v1IV.SellApi.FulfillmentApis
         /// <summary>
         ///  Use this call to retrieve the contents of a fulfillment based on its unique identifier, &lt;b&gt;fulfillmentId&lt;/b&gt; (combined with the associated order&#x27;s &lt;b&gt;orderId&lt;/b&gt;). The &lt;b&gt;fulfillmentId&lt;/b&gt; value was originally generated by the &lt;b&gt;createShippingFulfillment&lt;/b&gt; call, and is returned by the &lt;b&gt;getShippingFulfillments&lt;/b&gt; call in the &lt;b&gt;members.fulfillmentId&lt;/b&gt; field.
         /// </summary>
-        /// <exception cref="EBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="eBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fulfillmentId">This path parameter is used to specify the unique identifier of the shipping fulfillment being retrieved.&lt;br&gt;&lt;br&gt;Use the &lt;a href&#x3D;\&quot;/api-docs/sell/fulfillment/resources/order/shipping_fulfillment/methods/getShippingFulfillments\&quot; target&#x3D;\&quot;_blank \&quot;&gt;getShippingFulfillments&lt;/a&gt; method to retrieved fulfillment IDs.</param>
         /// <param name="orderId">This path parameter is used to specify the unique identifier of the order associated with the shipping fulfillment being retrieved.&lt;br&gt;&lt;br&gt; Use the &lt;a href&#x3D;\&quot;/api-docs/sell/fulfillment/resources/order/methods/getOrders\&quot; target&#x3D;\&quot;_blank \&quot;&gt;getOrders&lt;/a&gt; method to retrieve order IDs. Order ID values are also shown in My eBay/Seller Hub.</param>
         /// <returns>ShippingFulfillment</returns>
@@ -473,7 +473,7 @@ namespace EBay.OAS3v1IV.SellApi.FulfillmentApis
         /// <summary>
         ///  Use this call to retrieve the contents of a fulfillment based on its unique identifier, &lt;b&gt;fulfillmentId&lt;/b&gt; (combined with the associated order&#x27;s &lt;b&gt;orderId&lt;/b&gt;). The &lt;b&gt;fulfillmentId&lt;/b&gt; value was originally generated by the &lt;b&gt;createShippingFulfillment&lt;/b&gt; call, and is returned by the &lt;b&gt;getShippingFulfillments&lt;/b&gt; call in the &lt;b&gt;members.fulfillmentId&lt;/b&gt; field.
         /// </summary>
-        /// <exception cref="EBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="eBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fulfillmentId">This path parameter is used to specify the unique identifier of the shipping fulfillment being retrieved.&lt;br&gt;&lt;br&gt;Use the &lt;a href&#x3D;\&quot;/api-docs/sell/fulfillment/resources/order/shipping_fulfillment/methods/getShippingFulfillments\&quot; target&#x3D;\&quot;_blank \&quot;&gt;getShippingFulfillments&lt;/a&gt; method to retrieved fulfillment IDs.</param>
         /// <param name="orderId">This path parameter is used to specify the unique identifier of the order associated with the shipping fulfillment being retrieved.&lt;br&gt;&lt;br&gt; Use the &lt;a href&#x3D;\&quot;/api-docs/sell/fulfillment/resources/order/methods/getOrders\&quot; target&#x3D;\&quot;_blank \&quot;&gt;getOrders&lt;/a&gt; method to retrieve order IDs. Order ID values are also shown in My eBay/Seller Hub.</param>
         /// <returns>ApiResponse of ShippingFulfillment</returns>
@@ -537,7 +537,7 @@ namespace EBay.OAS3v1IV.SellApi.FulfillmentApis
         /// <summary>
         ///  Use this call to retrieve the contents of a fulfillment based on its unique identifier, &lt;b&gt;fulfillmentId&lt;/b&gt; (combined with the associated order&#x27;s &lt;b&gt;orderId&lt;/b&gt;). The &lt;b&gt;fulfillmentId&lt;/b&gt; value was originally generated by the &lt;b&gt;createShippingFulfillment&lt;/b&gt; call, and is returned by the &lt;b&gt;getShippingFulfillments&lt;/b&gt; call in the &lt;b&gt;members.fulfillmentId&lt;/b&gt; field.
         /// </summary>
-        /// <exception cref="EBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="eBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fulfillmentId">This path parameter is used to specify the unique identifier of the shipping fulfillment being retrieved.&lt;br&gt;&lt;br&gt;Use the &lt;a href&#x3D;\&quot;/api-docs/sell/fulfillment/resources/order/shipping_fulfillment/methods/getShippingFulfillments\&quot; target&#x3D;\&quot;_blank \&quot;&gt;getShippingFulfillments&lt;/a&gt; method to retrieved fulfillment IDs.</param>
         /// <param name="orderId">This path parameter is used to specify the unique identifier of the order associated with the shipping fulfillment being retrieved.&lt;br&gt;&lt;br&gt; Use the &lt;a href&#x3D;\&quot;/api-docs/sell/fulfillment/resources/order/methods/getOrders\&quot; target&#x3D;\&quot;_blank \&quot;&gt;getOrders&lt;/a&gt; method to retrieve order IDs. Order ID values are also shown in My eBay/Seller Hub.</param>
         /// <returns>Task of ShippingFulfillment</returns>
@@ -551,7 +551,7 @@ namespace EBay.OAS3v1IV.SellApi.FulfillmentApis
         /// <summary>
         ///  Use this call to retrieve the contents of a fulfillment based on its unique identifier, &lt;b&gt;fulfillmentId&lt;/b&gt; (combined with the associated order&#x27;s &lt;b&gt;orderId&lt;/b&gt;). The &lt;b&gt;fulfillmentId&lt;/b&gt; value was originally generated by the &lt;b&gt;createShippingFulfillment&lt;/b&gt; call, and is returned by the &lt;b&gt;getShippingFulfillments&lt;/b&gt; call in the &lt;b&gt;members.fulfillmentId&lt;/b&gt; field.
         /// </summary>
-        /// <exception cref="EBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="eBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fulfillmentId">This path parameter is used to specify the unique identifier of the shipping fulfillment being retrieved.&lt;br&gt;&lt;br&gt;Use the &lt;a href&#x3D;\&quot;/api-docs/sell/fulfillment/resources/order/shipping_fulfillment/methods/getShippingFulfillments\&quot; target&#x3D;\&quot;_blank \&quot;&gt;getShippingFulfillments&lt;/a&gt; method to retrieved fulfillment IDs.</param>
         /// <param name="orderId">This path parameter is used to specify the unique identifier of the order associated with the shipping fulfillment being retrieved.&lt;br&gt;&lt;br&gt; Use the &lt;a href&#x3D;\&quot;/api-docs/sell/fulfillment/resources/order/methods/getOrders\&quot; target&#x3D;\&quot;_blank \&quot;&gt;getOrders&lt;/a&gt; method to retrieve order IDs. Order ID values are also shown in My eBay/Seller Hub.</param>
         /// <returns>Task of ApiResponse (ShippingFulfillment)</returns>
@@ -615,7 +615,7 @@ namespace EBay.OAS3v1IV.SellApi.FulfillmentApis
         /// <summary>
         ///  Use this call to retrieve the contents of all fulfillments currently defined for a specified order based on the order&#x27;s unique identifier, &lt;b&gt;orderId&lt;/b&gt;. This value is returned in the &lt;b&gt;getOrders&lt;/b&gt; call&#x27;s &lt;b&gt;members.orderId&lt;/b&gt; field when you search for orders by creation date or shipment status.
         /// </summary>
-        /// <exception cref="EBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="eBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">This path parameter is used to specify the unique identifier of the order associated with the shipping fulfillments being retrieved.&lt;br&gt;&lt;br&gt;Use the &lt;a href&#x3D;\&quot;/api-docs/sell/fulfillment/resources/order/methods/getOrders\&quot; target&#x3D;\&quot;_blank \&quot;&gt;getOrders&lt;/a&gt; method to retrieve order IDs. Order ID values are also shown in My eBay/Seller Hub.</param>
         /// <returns>ShippingFulfillmentPagedCollection</returns>
         public ShippingFulfillmentPagedCollection GetShippingFulfillments (string orderId)
@@ -627,7 +627,7 @@ namespace EBay.OAS3v1IV.SellApi.FulfillmentApis
         /// <summary>
         ///  Use this call to retrieve the contents of all fulfillments currently defined for a specified order based on the order&#x27;s unique identifier, &lt;b&gt;orderId&lt;/b&gt;. This value is returned in the &lt;b&gt;getOrders&lt;/b&gt; call&#x27;s &lt;b&gt;members.orderId&lt;/b&gt; field when you search for orders by creation date or shipment status.
         /// </summary>
-        /// <exception cref="EBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="eBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">This path parameter is used to specify the unique identifier of the order associated with the shipping fulfillments being retrieved.&lt;br&gt;&lt;br&gt;Use the &lt;a href&#x3D;\&quot;/api-docs/sell/fulfillment/resources/order/methods/getOrders\&quot; target&#x3D;\&quot;_blank \&quot;&gt;getOrders&lt;/a&gt; method to retrieve order IDs. Order ID values are also shown in My eBay/Seller Hub.</param>
         /// <returns>ApiResponse of ShippingFulfillmentPagedCollection</returns>
         public ApiResponse< ShippingFulfillmentPagedCollection > GetShippingFulfillmentsWithHttpInfo (string orderId)
@@ -686,7 +686,7 @@ namespace EBay.OAS3v1IV.SellApi.FulfillmentApis
         /// <summary>
         ///  Use this call to retrieve the contents of all fulfillments currently defined for a specified order based on the order&#x27;s unique identifier, &lt;b&gt;orderId&lt;/b&gt;. This value is returned in the &lt;b&gt;getOrders&lt;/b&gt; call&#x27;s &lt;b&gt;members.orderId&lt;/b&gt; field when you search for orders by creation date or shipment status.
         /// </summary>
-        /// <exception cref="EBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="eBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">This path parameter is used to specify the unique identifier of the order associated with the shipping fulfillments being retrieved.&lt;br&gt;&lt;br&gt;Use the &lt;a href&#x3D;\&quot;/api-docs/sell/fulfillment/resources/order/methods/getOrders\&quot; target&#x3D;\&quot;_blank \&quot;&gt;getOrders&lt;/a&gt; method to retrieve order IDs. Order ID values are also shown in My eBay/Seller Hub.</param>
         /// <returns>Task of ShippingFulfillmentPagedCollection</returns>
         public async System.Threading.Tasks.Task<ShippingFulfillmentPagedCollection> GetShippingFulfillmentsAsync (string orderId)
@@ -699,7 +699,7 @@ namespace EBay.OAS3v1IV.SellApi.FulfillmentApis
         /// <summary>
         ///  Use this call to retrieve the contents of all fulfillments currently defined for a specified order based on the order&#x27;s unique identifier, &lt;b&gt;orderId&lt;/b&gt;. This value is returned in the &lt;b&gt;getOrders&lt;/b&gt; call&#x27;s &lt;b&gt;members.orderId&lt;/b&gt; field when you search for orders by creation date or shipment status.
         /// </summary>
-        /// <exception cref="EBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="eBay.OAS3v1IV.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">This path parameter is used to specify the unique identifier of the order associated with the shipping fulfillments being retrieved.&lt;br&gt;&lt;br&gt;Use the &lt;a href&#x3D;\&quot;/api-docs/sell/fulfillment/resources/order/methods/getOrders\&quot; target&#x3D;\&quot;_blank \&quot;&gt;getOrders&lt;/a&gt; method to retrieve order IDs. Order ID values are also shown in My eBay/Seller Hub.</param>
         /// <returns>Task of ApiResponse (ShippingFulfillmentPagedCollection)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<ShippingFulfillmentPagedCollection>> GetShippingFulfillmentsAsyncWithHttpInfo (string orderId)

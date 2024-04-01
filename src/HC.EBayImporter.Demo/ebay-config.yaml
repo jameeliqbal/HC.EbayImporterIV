@@ -1,0 +1,28 @@
+﻿name: ebay-config
+
+# OAuth Access Tokens - https://developer.ebay.com/api-docs/static/oauth-tokens.html
+
+# UPDATE the values in this file, before running the tests
+# api.sandbox.ebay.com:
+#     appid: HollandC-8899-4732-baca-3d439b04c651
+#     certid: 55c242ec-3f27-4a0f-9fa6-4b059aa8cdd1
+#     devid: 1259f389-2b80-45e8-8087-b5a46721e81e
+#     redirecturi: <redirect_uri-from-developer-portal>
+
+# api.ebay.com:
+#     appid: HollandC-f88b-48c1-8b9d-845a2fb39878
+#     certid: 55c242ec-3f27-4a0f-9fa6-4b059aa8cdd1
+#     devid: 0a8ae964-1856-4287-b777-69f7ab653d63
+#     redirecturi: <redirect_uri-from-developer-portal>
+
+api.sandbox.ebay.com:
+    appid: JameelSa-Holland-SBX-9d8d93d80-83bf6b95
+    certid: SBX-d8d93d800487-ccdf-4787-b8b6-9a5b
+    devid: 035488e9-3961-4ef4-adf4-81ec0c28e0cc
+    redirecturi: Jameel_Saroash_-JameelSa-Hollan-qgapul
+
+api.ebay.com:
+    appid: HollandC-f88b-48c1-8b9d-845a2fb39878
+    certid: 55c242ec-3f27-4a0f-9fa6-4b059aa8cdd1
+    devid: 0a8ae964-1856-4287-b777-69f7ab653d63
+    redirecturi: Holland_Compute-HollandC-f88b-4-nhhiyztu

@@ -19,8 +19,8 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = EBay.OAS3v1IV.Client.SwaggerDateConverter;
-namespace EBay.OAS3v1IV.Models
+//using SwaggerDateConverter = EBay.OAS3v1IV.Client.SwaggerDateConverter;
+namespace eBay.OAS3v1IV.Models
 {
     /// <summary>
     /// This type contains information about the type and amount of tax that eBay will collect and remit to the state, province, country, or other taxing authority in the buyer&#x27;s location, as required by that taxing authority.&lt;br&gt;&lt;br&gt;&#x27;Collect and Remit&#x27; tax includes:&lt;ul&gt;&lt;li&gt;US state-mandated sales tax&lt;/li&gt;&lt;li&gt;Federal and Provincial Sales Tax in Canada&lt;/li&gt;&lt;li&gt;&#x27;Goods and Services&#x27; tax in Canada, Australia, and New Zealand&lt;/li&gt;&lt;li&gt;VAT collected for the UK and EU countries&lt;/li&gt;&lt;/ul&gt;
